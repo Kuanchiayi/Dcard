@@ -72,6 +72,7 @@ public class FavoriteFragment extends Fragment {
     }
 
     public void readData(){
+        arrayList.clear();
         pref = getActivity().getSharedPreferences("example", MODE_PRIVATE);
         String jsonArray = pref.getString("jsonArray", "");
 
@@ -154,12 +155,7 @@ public class FavoriteFragment extends Fragment {
                                         new DialogInterface.OnClickListener() {
                                             @Override
                                             public void onClick(DialogInterface dialog, int which) {
-                                                if (final_list.size()>0) {
-                                                    for (int i=0; i<final_list.size(); i++) {
-                                                        adapter.notifyItemRemoved(i);
-                                                        adapter.notifyItemRangeChanged(0, final_list.size()-1);
-                                                    }
-                                                }
+
                                                 /*刪除資料*/
                                                 collect_items();
                                                 /*重新讀取jsonArray*/
@@ -182,9 +178,6 @@ public class FavoriteFragment extends Fragment {
                     for (int i=0; i< originJsonArray.length(); i++) {
                         JSONObject originJsonObj = originJsonArray.getJSONObject(i);
                         final_list.add(originJsonObj);
-
-                        String origin_id = originJsonObj.getString("id");
-                        id_list.add(origin_id);
                     }
                     Log.e("id_list:", id_list+"a");
 
