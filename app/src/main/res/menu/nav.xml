@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="首頁"
+        android:id="@+id/home"
+        android:icon="@drawable/round_home_24"
+        />
+    <item
+        android:title="收藏"
+        android:id="@+id/favorite"
+        android:icon="@drawable/round_bookmark_24"
+        />
+    <item
+        android:title="更新"
+        android:id="@+id/update"
+        android:icon="@drawable/outline_update_24"
+        />
+</menu>
